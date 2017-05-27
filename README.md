@@ -10,7 +10,7 @@ An attempt to recreate a 1970s monophonic synthesiser using a Raspberry Pi. It c
 Although the server runs on a Pi, it is standard Java so it should run on any modern computer.
 
 ## Client
-Install http://puredata.org and load the moopig.pd code.  Developed with Pure Data 0.47-1
+  * Install PureData from http://puredata.org and load the moopig.pd code.  Developed with Pure Data 0.47-1
 
   * Add your Midi adapter using File->Preferences->MIDI settings.
   * Put the IP address of your Pi into the "connect" box. (Use CTRL-E to toggle between edit and run mode)
@@ -19,9 +19,11 @@ Install http://puredata.org and load the moopig.pd code.  Developed with Pure Da
 
 ## Server
 
-The server uses HappyBrackets for convenience. Experts might wish to convert this to a BEADS project. The installation is detailed at https://github.com/orsjb/HappyBrackets/wiki/Getting-Started. Skip past the "Setting up your computer" part unless you want to do Java development. Instead just do the "Setting up your Raspberry Pi" part.
-
-  * Create a HappyBrackets/Rasbian SD card. Follow either set of instructions.
-  * Undo the network changes (restore your own WiFi settings).
+The server uses HappyBrackets for convenience. Experts might wish to convert this to a BEADS project. The installation is detailed at https://github.com/orsjb/HappyBrackets/wiki/Getting-Started. Skip past the "Setting up your computer" part unless you want to do Java development. Instead just do the "Setting up your Raspberry Pi" part. There are several ways to configure a system. This is the way I did it from a new NOOBs card.
+  * Start your Pi with a new NOOBs SD card.
+  * Select the "Rasbian with PIXEL" option.
+  * Get your Pi online by ethernet or WiFi.
+  * Follow the instructions for setting up HappyBrackets on the Pi by script (option 2). https://github.com/orsjb/HappyBrackets/wiki/Getting-Started but do not follow the extra instructions about changing your network to Pinet. 
+  * Type ifconfig in the shell to find your IP address. You need to enter this into the client. Mine was 192.168.1.9.
   * Install moopig classes. These go in <path>\net\happybrackets\peter
   * Set HappyBrackets to auto run by editing the startup script.
