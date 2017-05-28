@@ -1,0 +1,42 @@
+Introduction
+
+These are the class files that run the Moopig sound generator.
+They have been compiled from the source code and are provided as a convenience.
+The compilation was done using IntelliJ as a HappyBrackets project if you want to use the original source.
+
+They are designed to run under the HappyBrackets environment.
+https://github.com/orsjb/HappyBrackets/wiki/Getting-Started
+
+These classes have been tested on a Raspberry Pi.
+
+Install:
+  Create the path if it doesn't already exist
+  /home/pi/HappyBrackets/data/classes/net/happybrackets/peter
+  and copy the class files there.
+
+
+Configure:
+  Set HappyBrackets to auto run by editing the startup script. 
+  nano ~/HappyBrackets/scripts/run.sh
+
+  and set the ACTION line as follows
+
+  ACTION=net.happybrackets.peter.moopig
+
+Troubleshoot:
+
+  If there is no sound then check that the audio is set to go to the port that you want, 3.5mm jack or HDMI.
+
+  If Moopig doesn't work, restart the server to see if there are any errors.
+
+
+  cd ~/HappyBrackets
+
+  sudo killall java
+
+  sudo ./scripts/run.sh
+
+
+
+
+
