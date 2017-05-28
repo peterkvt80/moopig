@@ -23,7 +23,22 @@ The server uses HappyBrackets for convenience. Experts might wish to convert thi
   * Start your Pi with a new NOOBs SD card.
   * Select the "Rasbian with PIXEL" option.
   * Get your Pi online by ethernet or WiFi.
-  * Follow the instructions for setting up HappyBrackets on the Pi by script (option 2). https://github.com/orsjb/HappyBrackets/wiki/Getting-Started but do not follow the extra instructions about changing your network to Pinet. 
+  * Follow the instructions for setting up HappyBrackets on the Pi by script (option 2). https://github.com/orsjb/HappyBrackets/wiki/Getting-Started WARNING: Do not follow the extra instructions about changing your network to Pinet. 
   * Type ifconfig in the shell to find your IP address. You need to enter this into the client. Mine was 192.168.1.9.
-  * Install moopig classes. These go in <path>\net\happybrackets\peter
-  * Set HappyBrackets to auto run by editing the startup script.
+  * Install the moopig classes (eight of them at the last count). On the Pi make this directory path /home/pi/HappyBrackets/data/classes/net/happybrackets/peter. Place the class files in there. More information about this at https://github.com/orsjb/HappyBrackets/wiki/Copying-Audio-and-Classes-and-Autorunning-Actions
+  * Set HappyBrackets to auto run by editing the startup script. 
+    nano ~/HappyBrackets/scripts/run.sh
+    and set the ACTION line as follows
+    ACTION=net.happybrackets.peter.moopig
+    
+* Troubleshooting
+Is HappyBrackets running? When you boot you should hear a tone when it starts. If you are using the minijack for audio and you have HDMI plugged in then it might be diverting the audio that way. Unplug the HDMI and reboot.
+
+Is HappyBrackets configured to run Moopig? Open a console and start and stop HappyBrackets.
+
+  cd ~/HappyBrackets
+  sudo killall java
+  sudo ./scripts/run.sh
+
+If you have any errors then this will show you a traceback
+  
