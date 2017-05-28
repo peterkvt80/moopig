@@ -27,18 +27,20 @@ The server uses HappyBrackets for convenience. Experts might wish to convert thi
   * Type ifconfig in the shell to find your IP address. You need to enter this into the client. Mine was 192.168.1.9.
   * Install the moopig classes (eight of them at the last count). On the Pi make this directory path /home/pi/HappyBrackets/data/classes/net/happybrackets/peter. Place the class files in there. More information about this at https://github.com/orsjb/HappyBrackets/wiki/Copying-Audio-and-Classes-and-Autorunning-Actions
   * Set HappyBrackets to auto run by editing the startup script. 
+```bash  
     nano ~/HappyBrackets/scripts/run.sh
     and set the ACTION line as follows
     ACTION=net.happybrackets.peter.moopig
+```    
     
-* Troubleshooting
+## Troubleshooting
 Is HappyBrackets running? When you boot you should hear a tone when it starts. If you are using the minijack for audio and you have HDMI plugged in then it might be diverting the audio that way. Unplug the HDMI and reboot.
 
 Is HappyBrackets configured to run Moopig? Open a console and start and stop HappyBrackets.
-
+```bash
   cd ~/HappyBrackets
   sudo killall java
   sudo ./scripts/run.sh
-
+```
 If you have any errors then this will show you a traceback
   
